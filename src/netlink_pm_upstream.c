@@ -45,7 +45,7 @@ static int upstream_cmd_announce(struct mptcpd_pm *pm,
                                  mptcpd_aid_t id,
                                  mptcpd_token_t token)
 {
-        return netlink_pm_add_addr(MPTCP_CMD_ANNOUNCE,
+        return netlink_pm_add_addr(MPTCP_PM_CMD_ANNOUNCE,
                                    pm,
                                    addr,
                                    id,
@@ -56,7 +56,7 @@ static int upstream_cmd_remove(struct mptcpd_pm *pm,
                                mptcpd_aid_t address_id,
                                mptcpd_token_t token)
 {
-        return netlink_pm_remove_addr(MPTCP_CMD_REMOVE,
+        return netlink_pm_remove_addr(MPTCP_PM_CMD_REMOVE,
                                       pm,
                                       address_id,
                                       token);
@@ -70,7 +70,7 @@ static int upstream_add_subflow(struct mptcpd_pm *pm,
                                 struct sockaddr const *remote_addr,
                                 bool backup)
 {
-        return netlink_pm_add_subflow(MPTCP_CMD_SUB_CREATE,
+        return netlink_pm_add_subflow(MPTCP_PM_CMD_SUBFLOW_CREATE,
                                       pm,
                                       token,
                                       local_address_id,
@@ -85,7 +85,7 @@ static int upstream_remove_subflow(struct mptcpd_pm *pm,
                                    struct sockaddr const *local_addr,
                                    struct sockaddr const *remote_addr)
 {
-        return netlink_pm_remove_subflow(MPTCP_CMD_SUB_DESTROY,
+        return netlink_pm_remove_subflow(MPTCP_PM_CMD_SUBFLOW_DESTROY,
                                          pm,
                                          token,
                                          local_addr,
@@ -98,7 +98,7 @@ static int upstream_set_backup(struct mptcpd_pm *pm,
                                struct sockaddr const *remote_addr,
                                bool backup)
 {
-        return netlink_pm_set_backup(MPTCP_CMD_SUB_PRIORITY,
+        return netlink_pm_set_backup(MPTCP_PM_CMD_SUBFLOW_PRIORITY,
                                      pm,
                                      token,
                                      local_addr,
