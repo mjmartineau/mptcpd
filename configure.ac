@@ -209,7 +209,7 @@ AC_CHECK_HEADERS([linux/mptcp.h],
         [MPTCP_PM_NAME],
         [AC_DEFINE([HAVE_LINUX_MPTCP_H_UPSTREAM], [1])
          AX_CHECK_DEFINE([linux/mptcp.h],
-                         [MPTCP_PM_EV_GRP_NAME],
+                         [MPTCP_PM_EV_GRP_NAMEX],
                          [AC_DEFINE([HAVE_LINUX_MPTCP_H_UPSTREAM_EVENTS],
                                     [1])
                          ])
